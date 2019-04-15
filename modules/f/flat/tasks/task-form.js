@@ -5,7 +5,7 @@ var participant_name =function(record){ if(record.Subject_Initials!=undefined) r
 //-------------------------------------
 //auto select participant
 var wait1=function(){
-    var sql="with tb as (select UID,Subject_Initials=JSON_VALUE(Information,'$.Initials'),Screening_Number=JSON_VALUE(Information,'$.Screening_Number') from [TABLE-"+participant_tid+"])";
+    var sql="with tb as (select UID,Subject_Initials=JSON_VALUE(Information,'$.Subject_Initials'),Screening_Number=JSON_VALUE(Information,'$.Screening_Number') from [TABLE-"+participant_tid+"])";
     sql+=" select top 10 UID,Subject_Initials,Screening_Number from tb where Subject_Initials like '%'+@S1+'%' ";
     var autocomplete_list=function(records){
         var items=[];

@@ -50,14 +50,26 @@
         "s-visit-date-data":		    {url:"$A/modules/f/flat/tasks/visit-date-data.html",Table:"20010827",form_module:"s-visit-date-form"},
         "s-visit-date-form":		    {url:"$A/modules/f/flat/tasks/visit-date-form.html",Table:"20010827"},
         
+        "s-bloods-data":		        {url:"$A/modules/f/flat/tasks/bloods-data.html",Table:"91000710",form_module:"s-bloods-form"},
+        "s-bloods-form":		        {url:"$A/modules/f/flat/tasks/bloods-form.html",Table:"91000710"},
+
+        "s-psg-upload-data":		        {url:"$A/modules/f/flat/tasks/psg-300-data.html",Table:"91000711",form_module:"s-psg-upload-form"},
+        "s-psg-upload-form":		        {url:"$A/modules/f/flat/tasks/psg-300-form.html",Table:"91000711"},
+        
+        /*
         "s-anthropometry-data":		    {url:"$A/modules/f/flat/tasks/anthropometry-data.html",Table:"20010829",form_module:"s-anthropometry-form"},
         "s-anthropometry-form":		    {url:"$A/modules/f/flat/tasks/anthropometry-form.html",Table:"20010829",task_name:"Anthropometry"},
         
         "s-ess-data":                   {url:"$A/modules/f/flat/tasks/epworth-sleepiness-scale-data.html",Table:"20010831",form_module:"s-ess-form"},
         "s-ess-form":	                {url:"$A/modules/f/flat/tasks/epworth-sleepiness-scale-form.html",Table:"20010831",task_name:"Epworth Sleepiness Scale"},
+        */
+       
 
         "b-visit-date-data":		    {url:"$A/modules/f/flat/tasks/visit-date-data.html",Table:"20010832",form_module:"b-visit-date-form"},
         "b-visit-date-form":		    {url:"$A/modules/f/flat/tasks/visit-date-form.html",Table:"20010832"},
+        
+        "b-visit-info-data":		    {url:"$A/modules/f/flat/tasks/visit-info-data.html",Table:"91000712",form_module:"b-visit-info-form"},
+        "b-visit-info-form":		    {url:"$A/modules/f/flat/tasks/visit-info-form.html",Table:"91000712"},
 
         "b-anthropometry-data":		    {url:"$A/modules/f/flat/tasks/anthropometry-data.html",Table:"20010833",form_module:"b-anthropometry-form"},
         "b-anthropometry-form":		    {url:"$A/modules/f/flat/tasks/anthropometry-form.html",Table:"20010833",task_name:"Anthropometry"},
