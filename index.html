@@ -33,21 +33,12 @@
         $vm.module_list={
             //you can add modules here directly
             "home":                             {url:"$A/modules/h/home.html",router:1},
-            "panel-permission":   			    {url:"$A/modules/p/permission/panel-permission.html",router:1},
-            "permission-check":                 {url:"$A/modules/p/permission/permission-check.html"},
-            "permission-role-login-data":       {url:"$A/modules/p/permission/permission-role-login-data.html",Table:"91000684",form_module:"permission-role-login-form"},
-            "permission-role-login-form":       {url:"$A/modules/p/permission/permission-role-login-form.html",Table:"91000684"},
-            "permission-role-table-group-data": {url:"$A/modules/p/permission/permission-role-table-group-data.html",Table:"91000683",form_module:"permission-role-table-group-form"},
-            "permission-role-table-group-form": {url:"$A/modules/p/permission/permission-role-table-group-form.html",Table:"91000683"},
-            "permission-query-data":            {url:"$A/modules/p/permission/permission-query-data.html",Table:"91000682",form_module:"permission-query-form"},
-            "permission-query-form":            {url:"$A/modules/p/permission/permission-query-form.html",Table:"91000682"},
         };
         //------------------------------------
         //where are your all other modules
         $vm.app_modules=[
             //you can add a js file that will add mmodules to the $vm.module_list
-            "$A/modules/flat-app.js",
-            "$A/modules/flat-task.js",
+            "$A/modules/module-list.js",
         ]
         //------------------------------------
         
