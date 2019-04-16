@@ -89,6 +89,14 @@
         "m12-visit-info-data":		    {url:"$A/modules/f/flat/tasks/visit-info-data.html",Table:"91000721",form_module:"m12-visit-info-form"},
         "m12-visit-info-form":		    {url:"$A/modules/f/flat/tasks/visit-info-form.html",Table:"91000721"},
 
+        "b-dxa-data":		    {url:"$A/modules/f/flat/tasks/dxa-data.html",Table:"91000722",form_module:"b-dxa-form"},
+        "b-dxa-form":		    {url:"$A/modules/f/flat/tasks/dxa-form.html",Table:"91000722",task_name:"DXA"},
+        "m3-dxa-data":		    {url:"$A/modules/f/flat/tasks/dxa-data.html",Table:"91000723",form_module:"m3-dxa-form"},
+        "m3-dxa-form":		    {url:"$A/modules/f/flat/tasks/dxa-form.html",Table:"91000723",task_name:"DXA"},
+        "m12-dxa-data":		    {url:"$A/modules/f/flat/tasks/dxa-data.html",Table:"91000724",form_module:"m12-dxa-form"},
+        "m12-dxa-form":		    {url:"$A/modules/f/flat/tasks/dxa-form.html",Table:"91000724",task_name:"DXA"},
+
+
         "b-anthropometry-data":		    {url:"$A/modules/f/flat/tasks/anthropometry-data.html",Table:"20010833",form_module:"b-anthropometry-form"},
         "b-anthropometry-form":		    {url:"$A/modules/f/flat/tasks/anthropometry-form.html",Table:"20010833",task_name:"Anthropometry"},
         
