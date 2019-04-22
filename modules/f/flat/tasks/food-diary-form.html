@@ -1,15 +1,16 @@
+
 <div id=D__ID>
     <section id=form_container__ID>
         <div id=header__ID>
-    		Anthropometry
-    	</div>
-    	<form id=F__ID>
+            DXA
+        </div>
+        <form id=F__ID>
             <div class="container">
                 <!-- participant part for all tsak forms -------------------->
                 <div class="row row__ID" id=row_participant__ID>
                     <div class="col-sm-12 col-lg-9 input__ID">
                         <span class=label__ID>Participant</span><br>
-                        <input type=text name="Participant" class=form-control id=Participant__ID data-id="Participant" />
+                        <input type=text name="Participant" class=form-control id=Participant__ID data-id="Participant" required />
                     </div>
                     <div class="col-sm-12 col-lg-3 input__ID">
                         <span class=label__ID>Participant ID</span><br>
@@ -18,47 +19,40 @@
                     <hr style="border-top: 1px solid #888;width: 100%;margin:10px 0">
                 </div>
                 <!---------------------------------------------------->
-
                 <!-- Form Inputs-------------------------------------->
                 <div class='row row__ID'>
     				<div class="col">
-    					<span>Height(cm)</span>
-    					<input type=number class=form-control name=Height_cm step=0.1>
-    				</div>
-    			</div>
-                <div class='row row__ID'>
-    				<div class="col">
-    					<span>Weight (kg)</span>
-    					<input type=number class=form-control name=Weight_kg step="0.1">
-    				</div>
-    			</div>
-                <div class='row row__ID'>
-    				<div class="col">
-    					<span>BMI</span>
-    					<input type=number class=form-control  step="0.1" readonly name=BMI>
-    				</div>
-    			</div>
+    					<span>File Upload</span>
+                        <div class="form-control">
+                            <u style='cursor:pointer' id=link_File__ID></u>
+                            <br>
+                            <input type="file" name=File style="margin-top:6px" /> &nbsp&nbsp&nbsp <button type="button" id=x_File__ID>Remove</button>
+                        </div>
+					</div>
+                </div>            
                 <!---------------------------------------------------->
+                
                 <!-- Form Inputs-------------------------------------->
                 <div id=dynamic_part__ID></div>
                 <!---------------------------------------------------->
-
+                
                 <!-- submit button part for all tsak forms------------>
                 <br>
-    			<div class="row">
-    				<div class=col>
-    					<button id=submit__ID type="submit" class="btn btn-secondary">Submit</button>
-    				</div>
-    			</div>
+                <div class="row">
+                    <div class=col>
+                        <button id=submit__ID type="submit" class="btn btn-secondary">Submit</button>
+                    </div>
+                </div>
                 <!---------------------------------------------------->
-        	</div>
+            </div>
         </form>
     </section>
+    VmInclude:__COMPONENT__/m/model.01.html
     <script>
         function F__ID(){
             //-------------------------------------
             //build text input fields
-            var fields="SysBP_RA_mmhg,SysBP_LA_mmHg,DiaBP_RA_mmhg,DiaBP_LA_mmHg,SysBP_3_mmHg,DiaBP_3_mmHg,HR,Neck_cm,Neck_cm_2,Neck_cm_3,Waist_cm,Waist_2,Waist_3";
+            var fields="EI_kJ,CHO_g,CHO_percent,Fat_g,Fat_percent,Protein_g,Protein_percent,Alcohol_g,Alcohol_percent";
             var fs=fields.split(',');
             var txt="";
             for(var i=0;i<fs.length;i++){
@@ -68,22 +62,21 @@
             }
             $('#dynamic_part__ID').html(txt);
             //-------------------------------------
-			VmInclude:'__COMPONENT__/f/form.01.js'
+            VmInclude:__COMPONENT__/f/form.01.js
             VmInclude:'__CURRENT_PATH__/task-form.js'
             //-------------------------------------
-            $('#D__ID input[name=Height_cm]').on('change',function(){   cal();  })
-            $('#D__ID input[name=Weight_kg]').on('change',function(){   cal();  })
-            //-------------------------------------
-            var cal=function(){
-                var h=$('#D__ID input[name=Height_cm]').val()/100;
-                var w=$('#D__ID input[name=Weight_kg]').val();
-                var b=(w/(h*h)).toFixed(1);
-                $('#D__ID input[name=BMI]').val(b);
+            var load5=m.load;
+            m.load=function(){
+                load5();
+                m.set_file_link("File");
             }
             //-------------------------------------
         }
     </script>
     <style>
-			VmInclude:__COMPONENT__/f/form.01.css
+        VmInclude:__COMPONENT__/f/form.01.css
+        #form_container__ID{
+            max-width:700px;
+        }
     </style>
 </div>

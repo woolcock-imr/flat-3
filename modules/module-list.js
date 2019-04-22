@@ -100,6 +100,16 @@
         "b-anthropometry-data":		    {url:"$A/modules/f/flat/tasks/anthropometry-data.html",Table:"20010833",form_module:"b-anthropometry-form"},
         "b-anthropometry-form":		    {url:"$A/modules/f/flat/tasks/anthropometry-form.html",Table:"20010833",task_name:"Anthropometry"},
         
+        "b-minmod-and-bloods-data":		    {url:"$A/modules/f/flat/tasks/minmod-and-bloods-data.html",Table:"91000726",form_module:"b-minmod-and-bloods-form"},
+        "b-minmod-and-bloods-form":		    {url:"$A/modules/f/flat/tasks/minmod-and-bloods-form.html",Table:"91000726",task_name:"b-minmod-and-bloods"},
+
+        "b-food-diary-data":		    {url:"$A/modules/f/flat/tasks/food-diary-data.html",Table:"91000727",form_module:"b-food-diary-form"},
+        "b-food-diary-form":		    {url:"$A/modules/f/flat/tasks/food-diary-form.html",Table:"91000727",task_name:"b-food-diary"},
+
+        "b-24hr-bp-data":		    {url:"$A/modules/f/flat/tasks/24hr-bp-data.html",Table:"91000728",form_module:"b-24hr-bp-form"},
+        "b-24hr-bp-form":		    {url:"$A/modules/f/flat/tasks/24hr-bp-form.html",Table:"91000728",task_name:"b-24hr_bp"},
+
+
         "b-ess-data":                   {url:"$A/modules/f/flat/tasks/epworth-sleepiness-scale-data.html",Table:"20010836",form_module:"b-ess-form"},
         "b-ess-form":	                {url:"$A/modules/f/flat/tasks/epworth-sleepiness-scale-form.html",Table:"20010836",task_name:"Epworth Sleepiness Scale"},
         

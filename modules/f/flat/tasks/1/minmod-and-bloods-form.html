@@ -20,26 +20,6 @@
                 <!---------------------------------------------------->
 
                 <!-- Form Inputs-------------------------------------->
-                <div class='row row__ID'>
-    				<div class="col">
-    					<span>Height(cm)</span>
-    					<input type=number class=form-control name=Height_cm step=0.1>
-    				</div>
-    			</div>
-                <div class='row row__ID'>
-    				<div class="col">
-    					<span>Weight (kg)</span>
-    					<input type=number class=form-control name=Weight_kg step="0.1">
-    				</div>
-    			</div>
-                <div class='row row__ID'>
-    				<div class="col">
-    					<span>BMI</span>
-    					<input type=number class=form-control  step="0.1" readonly name=BMI>
-    				</div>
-    			</div>
-                <!---------------------------------------------------->
-                <!-- Form Inputs-------------------------------------->
                 <div id=dynamic_part__ID></div>
                 <!---------------------------------------------------->
 
@@ -58,7 +38,7 @@
         function F__ID(){
             //-------------------------------------
             //build text input fields
-            var fields="SysBP_RA_mmhg,SysBP_LA_mmHg,DiaBP_RA_mmhg,DiaBP_LA_mmHg,SysBP_3_mmHg,DiaBP_3_mmHg,HR,Neck_cm,Neck_cm_2,Neck_cm_3,Waist_cm,Waist_2,Waist_3";
+            var fields="Glucose_180,Insulin_0,Insulin_10,Insulin_20,Insulin_30,Insulin_60,Insulin_90,Insulin_120,Insulin_150,Insulin_180,c_peptide_0,c_peptide_10,c_peptide_20,c_peptide_30,c_peptide_60,c_peptide_90,c_peptide_120,c_peptide_150,c_peptide_180,HbA1c_NGSP_percent,HbA1c-IFCC_mmolpermol,tc,trig,hdl,chol-hdl,vldl,ldl";
             var fs=fields.split(',');
             var txt="";
             for(var i=0;i<fs.length;i++){
@@ -70,16 +50,6 @@
             //-------------------------------------
 			VmInclude:'__COMPONENT__/f/form.01.js'
             VmInclude:'__CURRENT_PATH__/task-form.js'
-            //-------------------------------------
-            $('#D__ID input[name=Height_cm]').on('change',function(){   cal();  })
-            $('#D__ID input[name=Weight_kg]').on('change',function(){   cal();  })
-            //-------------------------------------
-            var cal=function(){
-                var h=$('#D__ID input[name=Height_cm]').val()/100;
-                var w=$('#D__ID input[name=Weight_kg]').val();
-                var b=(w/(h*h)).toFixed(1);
-                $('#D__ID input[name=BMI]').val(b);
-            }
             //-------------------------------------
         }
     </script>
