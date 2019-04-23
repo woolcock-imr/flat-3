@@ -12,7 +12,9 @@
             m.fields="_Form,Status|S3,Notes|NT,Participant_ID|Participant_uid,Participant,"+fields+",Submit_date,Submitted_by,_Delete";
             m.fields_e="Participant_ID|Participant_uid,"+fields
             //-------------------------------------
+            var old_cell_render=m.cell_render;
             m.cell_render=function(records,I,field,td,set_value,source){
+                old_cell_render(records,I,field,td,set_value,source);
                 switch(field){
                     case 'Visit_date':
                         td.html($vm.yyyymmdd_to_ddmmyyyy(records[I][field]));
