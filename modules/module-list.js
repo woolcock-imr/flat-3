@@ -68,6 +68,10 @@
         "b-visit-date-data":		    {url:"$A/modules/f/flat/tasks/visit-date-data.html",Table:"20010832",form_module:"b-visit-date-form"},
         "b-visit-date-form":		    {url:"$A/modules/f/flat/tasks/visit-date-form.html",Table:"20010832"},
         
+        "m3-visit-date-data":		    {url:"$A/modules/f/flat/tasks/visit-date-data.html",Table:"91000736",form_module:"m3-visit-date-form"},
+        "m3-visit-date-form":		    {url:"$A/modules/f/flat/tasks/visit-date-form.html",Table:"91000736"},
+
+
         "b-visit-info-data":		    {url:"$A/modules/f/flat/tasks/visit-info-data.html",Table:"91000712",form_module:"b-visit-info-form"},
         "b-visit-info-form":		    {url:"$A/modules/f/flat/tasks/visit-info-form.html",Table:"91000712"},
         "w1-visit-info-data":		    {url:"$A/modules/f/flat/tasks/visit-info-data.html",Table:"91000713",form_module:"w1-visit-info-form"},
@@ -99,31 +103,50 @@
 
         "b-anthropometry-data":		    {url:"$A/modules/f/flat/tasks/anthropometry-data.html",Table:"20010833",form_module:"b-anthropometry-form"},
         "b-anthropometry-form":		    {url:"$A/modules/f/flat/tasks/anthropometry-form.html",Table:"20010833",task_name:"Anthropometry"},
+        "m3-anthropometry-data":		{url:"$A/modules/f/flat/tasks/anthropometry-data.html",Table:"91000737",form_module:"m3-anthropometry-form"},
+        "m3-anthropometry-form":		{url:"$A/modules/f/flat/tasks/anthropometry-form.html",Table:"91000737",task_name:"Anthropometry"},
         
         "b-minmod-and-bloods-data":		    {url:"$A/modules/f/flat/tasks/minmod-and-bloods-data.html",Table:"91000726",form_module:"b-minmod-and-bloods-form"},
         "b-minmod-and-bloods-form":		    {url:"$A/modules/f/flat/tasks/minmod-and-bloods-form.html",Table:"91000726",task_name:"b-minmod-and-bloods"},
+        "m3-minmod-and-bloods-data":		    {url:"$A/modules/f/flat/tasks/minmod-and-bloods-data.html",Table:"91000738",form_module:"m3-minmod-and-bloods-form"},
+        "m3-minmod-and-bloods-form":		    {url:"$A/modules/f/flat/tasks/minmod-and-bloods-form.html",Table:"91000738",task_name:"minmod-and-bloods"},
 
         "b-food-diary-data":		    {url:"$A/modules/f/flat/tasks/food-diary-data.html",Table:"91000727",form_module:"b-food-diary-form"},
         "b-food-diary-form":		    {url:"$A/modules/f/flat/tasks/food-diary-form.html",Table:"91000727",task_name:"b-food-diary"},
+        "m3-food-diary-data":		    {url:"$A/modules/f/flat/tasks/food-diary-data.html",Table:"91000739",form_module:"m3-food-diary-form"},
+        "m3-food-diary-form":		    {url:"$A/modules/f/flat/tasks/food-diary-form.html",Table:"91000739",task_name:"m3-food-diary"},
 
         "b-24hr-bp-data":		    {url:"$A/modules/f/flat/tasks/24hr-bp-data.html",Table:"91000728",form_module:"b-24hr-bp-form"},
         "b-24hr-bp-form":		    {url:"$A/modules/f/flat/tasks/24hr-bp-form.html",Table:"91000728",task_name:"b-24hr_bp"},
+        "m3-24hr-bp-data":		    {url:"$A/modules/f/flat/tasks/24hr-bp-data.html",Table:"91000740",form_module:"m3-24hr-bp-form"},
+        "m3-24hr-bp-form":		    {url:"$A/modules/f/flat/tasks/24hr-bp-form.html",Table:"91000740",task_name:"m3-24hr_bp"},
 
 
         "b-ess-data":                   {url:"$A/modules/f/flat/tasks/epworth-sleepiness-scale-data.html",Table:"20010836",form_module:"b-ess-form"},
         "b-ess-form":	                {url:"$A/modules/f/flat/tasks/epworth-sleepiness-scale-form.html",Table:"20010836",task_name:"Epworth Sleepiness Scale"},
+        "m3-ess-data":                  {url:"$A/modules/f/flat/tasks/epworth-sleepiness-scale-data.html",Table:"91000741",form_module:"m3-ess-form"},
+        "m3-ess-form":	                {url:"$A/modules/f/flat/tasks/epworth-sleepiness-scale-form.html",Table:"91000741",task_name:"Epworth Sleepiness Scale"},
         
         "b-fosq-data":                  {url:"$A/modules/f/flat/tasks/fosq-data.html",Table:"20010838",form_module:"b-fosq-form"},
         "b-fosq-form":	                {url:"$A/modules/f/flat/tasks/fosq-form.html",Table:"20010838",task_name:"Functional Outcomes of Sleep"},
+        "m3-fosq-data":                 {url:"$A/modules/f/flat/tasks/fosq-data.html",Table:"91000742",form_module:"m3-fosq-form"},
+        "m3-fosq-form":	                {url:"$A/modules/f/flat/tasks/fosq-form.html",Table:"91000742",task_name:"Functional Outcomes of Sleep"},
 
         "b-dass-data":                  {url:"$A/modules/f/flat/tasks/depression-anxiety-stress-scales-data.html",Table:"20010839",form_module:"b-dass-form"},
         "b-dass-form":	                {url:"$A/modules/f/flat/tasks/depression-anxiety-stress-scales-form.html",Table:"20010839",task_name:"dass"},
+        "m3-dass-data":                 {url:"$A/modules/f/flat/tasks/depression-anxiety-stress-scales-data.html",Table:"91000743",form_module:"m3-dass-form"},
+        "m3-dass-form":	                {url:"$A/modules/f/flat/tasks/depression-anxiety-stress-scales-form.html",Table:"91000743",task_name:"dass"},
         
+        //IWQO
         "b-iwqlq-data":                 {url:"$A/modules/f/flat/tasks/iwqlq-data.html",Table:"20010841",form_module:"b-iwqlq-form"},
         "b-iwqlq-form":	                {url:"$A/modules/f/flat/tasks/iwqlq-form.html",Table:"20010841",task_name:"iwqlq"},
+        "m3-iwqlq-data":                {url:"$A/modules/f/flat/tasks/iwqlq-data.html",Table:"91000744",form_module:"m3-iwqlq-form"},
+        "m3-iwqlq-form":	            {url:"$A/modules/f/flat/tasks/iwqlq-form.html",Table:"91000744",task_name:"iwqlq"},
         
         "b-ipaq-data":                  {url:"$A/modules/f/flat/tasks/ipaq-data.html",Table:"20010843",form_module:"b-ipaq-form"},
         "b-ipaq-form":	                {url:"$A/modules/f/flat/tasks/ipaq-form.html",Table:"20010843",task_name:"ipaq"},
+        "m3-ipaq-data":                  {url:"$A/modules/f/flat/tasks/ipaq-data.html",Table:"91000745",form_module:"m3-ipaq-form"},
+        "m3-ipaq-form":	                {url:"$A/modules/f/flat/tasks/ipaq-form.html",Table:"91000745",task_name:"ipaq"},
 
         "m2-visit-date-data":		    {url:"$A/modules/f/flat/tasks/visit-date-data.html",Table:"20010847",form_module:"m2-visit-date-form"},
         "m2-visit-date-form":		    {url:"$A/modules/f/flat/tasks/visit-date-form.html",Table:"20010847"},
