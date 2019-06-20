@@ -13,7 +13,6 @@
             //-------------------------------------
             $vm.url_$B=$vm.hosting_path.replace('flat','flat-online-questionnaire')
             if($vm.hosting_path.indexOf("flat-3")!=-1) $vm.url_$B=$vm.hosting_path.replace('flat-3','flat-3-online-questionnaire');
-            if($vm.localhost==true) online_questionnaire=$vm.url_$B;
             //-------------------------------------
             m.cell_render=function(records,I,field,td,set_value,source){
                 switch(field){
@@ -37,7 +36,7 @@
                             var db=""; if(window.location.toString().indexOf('db=dev')!=-1) db="&db=dev";
                             var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
                             var p="?username="+records[I].UID+"-"+m.Table+"&password="+records[I]._Password;
-                            var q_url=online_questionnaire+"/"+p+db+d;
+                            var q_url=$vm.url_$B+"/"+p+db+d;
     						window.open(q_url);
                         });
                         break;
