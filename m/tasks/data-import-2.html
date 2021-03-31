@@ -1,0 +1,166 @@
+<div id=D__ID>
+    <div style='padding:30px'>
+        Table ID:<br>
+        <input type=text id=table_id__ID /><br>
+        Fields (the first 3 columns should be [PUID, db_field, db_field,...] will be used to identify the record):<br>
+        <b>COPY & PASTE THIS into textbox below:</b><br>
+        PUID|Participant_id,visit|visit,index|Index,Sys|Sys,Dia|Dia,HR|HR,PP|PP,Mean|Mean,cSys|cSys,cDia|cDia,cHR|cHR,cPP|cPP,cAP|cAP,cAIx|cAIx,cAIx_75|cAIx_75,cMAP|cMAP
+        Hour|Hour,Minute|Minute,Month|Month,Day|Day,Year|Year<br>
+        <textarea id=fields__ID style='width:800px;height:100px' placeholder="PUID|participant-uid,DB-field|csv-column,..."></textarea><br>
+        CSV File:<br>
+        <input type=file id=file__ID  /><br>
+        <textarea id=records__ID style='width:800px;height:200px;'></textarea><br>
+        <button type=button id=import__ID >Import</button><br>
+        <textarea id=info__ID style='width:800px;height:200px;'></textarea><br>
+        <!--<span id=info__ID ></span><br>-->
+    </div>
+    <script>
+        function F__ID(){
+            //$('#fields__ID').val("PUID|ID_Number_0,Gender|Gender_0");
+            //$('#table_id__ID').val("20008659");
+            //-------------------------------------------
+            //var new_fields=[];
+            var new_records=[];
+            var reader_onload = function(e){
+                var contents = e.target.result;
+                var lines=contents.replace(/\r/g,'\n').replace(/\n\n/g,'\n').split('\n');
+                var NN=lines.length;
+                if(lines.length>1){
+                    var first_line=lines[0];
+                    var tab='\t';
+                    var n1=first_line.split('\t').length;
+                    var n2=first_line.split(',').length;
+                    if(n2>n1) tab=',';
+                    var out_fields=first_line.replace(/ /g,'_').splitCSV(tab);
+                    var in_fields=$('#fields__ID').val().splitCSV(',');
+                    new_records=[];
+                    var txt="";
+                    for(var i=1;i<NN;i++){
+                        var record={}
+                        var items=lines[i].replace(/ /g,'_').splitCSV(tab);
+                        if(lines[i].length>2 && items.length>1){
+                            for(var j=0;j<in_fields.length;j++){
+                                var a=in_fields[j].split('|')[0];
+                                var b=in_fields[j].split('|').pop();
+                                var k=out_fields.indexOf(b);
+                                if(k>=0){
+                                    if(k<items.length){
+                                        //var p=out_fields[k];
+                                        record[a]=items[k];
+                                        txt+=a+":"+record[a]+"\t";
+                                    }
+                                }
+                            }
+                            if(Object.keys(items).length>0){
+                                new_records.push(record);
+                                txt+="\r\n";
+                            }
+                        }
+                    }
+                    //console.log(new_fields)                    
+                    console.log(new_records)
+                    $('#records__ID').val(txt);
+                }
+            };
+            var handleFileSelect=function(evt){
+                if($('#table_id__ID').val()==""){
+                    alert("No table ID");
+                    $('#file__ID').val('');
+                    return;
+                }
+                if($('#fields__ID').val()==""){
+                    alert("No fields");
+                    $('#file__ID').val('');
+                    return;
+                }
+                var files = evt.target.files;
+                var reader = new FileReader();
+                reader.onload=reader_onload;
+                reader.readAsText(files[0]);
+            }
+            //-------------------------------------------
+            document.getElementById('file__ID').addEventListener('change', handleFileSelect,false);
+            //-------------------------------------------
+            var III=0;
+            var RT="";
+            var write_data_loop=function(){
+                jQuery.ajaxSetup({async:false});
+                var i=III;
+                new_records[i].Participant_uid=new_records[i].PUID;
+                var dbv={PUID:new_records[i].PUID}
+                //***********
+                var fields=$('#fields__ID').val().split(',');
+                var field2_name=fields[1].split('|')[0];
+                var field3_name=fields[2].split('|')[0];
+                var field2_value=new_records[i][field2_name];
+                var field3_value=new_records[i][field3_name];
+                var w2="dbo.F(Information,'"+field2_name+"')='"+field2_value+"'";
+                var w3="dbo.F(Information,'"+field3_name+"')='"+field3_value+"'";
+                var sql="select ID,PUID from [TABLE-"+$('#table_id__ID').val()+"] where PUID="+new_records[i].PUID +" and "+w2+" and "+w3;   
+                //***********
+                var reqR={cmd:'read',qid:$vm.qid,sql:sql}
+                $VmAPI.request({data:reqR,callback:function(res){
+                    if(res.records.length==0){
+                        var t1=$('#info__ID').val();
+                        var t2=t1+"\r\nPUID "+new_records[i].PUID+": add"
+                        $('#info__ID').val(t2);
+                        //**********************************************
+                        var reqA={cmd:"add",qid:$vm.qid,db_pid:$('#table_id__ID').val(),data:new_records[i],dbv:dbv,file:{},xml:"1"};
+                        //Add
+                        $VmAPI.request({data:reqA,callback:function(res){
+                        }});
+                        //**********************************************
+                    }
+                    if(res.records.length==1){
+                        var t1=$('#info__ID').val();
+                        var t2=t1+"\r\nPUID "+new_records[i].PUID+": modified"
+                        $('#info__ID').val(t2);
+                        //**********************************************
+                        var rid=res.records[0].ID;
+                        var reqM={cmd:"modify",rid:rid,qid:$vm.qid,db_pid:$('#table_id__ID').val(),data:new_records[i],dbv:dbv,file:{},xml:"1"};
+                        //Modify
+                        $VmAPI.request({data:reqM,callback:function(res){
+                        }});
+                        //**********************************************
+                    }
+                    else{
+                        var t1=$('#info__ID').val();
+                        var t2=t1+"\r\nPUID "+new_records[i].PUID+": error - "+res.records.length;
+                        $('#info__ID').val(t2);
+                    }
+                }})
+                
+                III++;
+                if(III<new_records.length){
+                    setTimeout( write_data_loop, 1000);
+                }
+                else{
+                    var t1=$('#info__ID').val();
+                    var t2=t1+"\r\nAll done!"
+                    $('#info__ID').val(t2);
+                }
+                jQuery.ajaxSetup({async:true});
+            }
+            //-------------------------------------------
+            $('#import__ID').on('click',function(){
+                III=0;
+                RT="";
+                if(new_records.length>0){
+                    setTimeout( write_data_loop, 100);
+                }
+                else{
+                    alert("No data to import.");
+                }
+            })
+            //-------------------------------------------
+        }
+    </script>
+    <style>
+        #D__ID{
+    		background-color:#fff;
+    		height:100%;
+    		overflow: auto;
+    		animation: vm_module_fadein 1.0s;
+    	}
+    </style>
+</div>
