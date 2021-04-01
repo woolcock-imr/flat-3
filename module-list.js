@@ -193,7 +193,7 @@
         "m12-ipaq-data":                {url:"$H/m/tasks/ipaq-data.html",Table:"20010886",form_module:"m12-ipaq-form"},
         "m12-ipaq-form":	            {url:"$H/m/tasks/ipaq-form.html",Table:"20010886",task_name:"ipaq"},
     //24hr BP Importing 
-        "24hr-bp-data":                 {url:"$H/m/tasks/24bp-dataimport-data.html",Table:"202103311241"},
+        "24hr-bp-data":                 {url:"$H/m/tasks/24bp-dataimport-data.html",Table:"91000906"},
         "data-import":                  {url:"$H/m/tasks/data-import-2.html"},
     
     
