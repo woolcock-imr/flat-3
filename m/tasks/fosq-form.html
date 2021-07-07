@@ -606,12 +606,12 @@
                 var total_val_1=0;
                 var mean_1=0;
                 for(var i=1;i<=4;i++){
-                    v[i]=parseInt( $('#D__ID input[name=fosq'+i.toString()+']:checked').val() );
+                    v[i]=parseInt( $('#D__ID input[name=FOSQ_'+i.toString()+']:checked').val() );
                     if(v[i]!=0) total_num_1++;
                     total_val_1+=v[i];
                 }
                 for(var i=8;i<=11;i++){
-                    v[i]=parseInt( $('#D__ID input[name=fosq'+i.toString()+']:checked').val() );
+                    v[i]=parseInt( $('#D__ID input[name=FOSQ_'+i.toString()+']:checked').val() );
                     if(v[i]!=0) total_num_1++;
                     total_val_1+=v[i];
                 }
@@ -622,7 +622,7 @@
                 var total_val_2=0;
                 var mean_2=0;
                 for(var i=12;i<=13;i++){
-                    v[i]=parseInt( $('#D__ID input[name=fosq'+i.toString()+']:checked').val() );
+                    v[i]=parseInt( $('#D__ID input[name=FOSQ_'+i.toString()+']:checked').val() );
                     if(v[i]!=0) total_num_2++;
                     total_val_2+=v[i];
                 }
@@ -633,49 +633,49 @@
                 var total_val_3=0;
                 var mean_3=0;
                 for(var i=5;i<=5;i++){
-                    v[i]=parseInt( $('#D__ID input[name=fosq'+i.toString()+']:checked').val() );
+                    v[i]=parseInt( $('#D__ID input[name=FOSQ_'+i.toString()+']:checked').val() );
                     if(v[i]!=0) total_num_3++;
                     total_val_3+=v[i];
                 }
                 for(var i=14;i<=16;i++){
-                    v[i]=parseInt( $('#D__ID input[name=fosq'+i.toString()+']:checked').val() );
+                    v[i]=parseInt( $('#D__ID input[name=FOSQ_'+i.toString()+']:checked').val() );
                     if(v[i]!=0) total_num_3++;
                     total_val_3+=v[i];
                 }
                 for(var i=22;i<=26;i++){
-                    v[i]=parseInt( $('#D__ID input[name=fosq'+i.toString()+']:checked').val() );
+                    v[i]=parseInt( $('#D__ID input[name=FOSQ_'+i.toString()+']:checked').val() );
                     if(v[i]!=0) total_num_3++;
                     total_val_3+=v[i];
                 }
                 if(total_num_3!=0) mean_3=total_val_3/total_num_3
-                record.FOSQ_Activity=mean_3;
+                record.FOSQ_Activity=mean_3.toFixed(1);
                 //-------------------------------
                 var total_num_4=0;
                 var total_val_4=0;
                 var mean_4=0;
                 for(var i=6;i<=7;i++){
-                    v[i]=parseInt( $('#D__ID input[name=fosq'+i.toString()+']:checked').val() );
+                    v[i]=parseInt( $('#D__ID input[name=FOSQ_'+i.toString()+']:checked').val() );
                     if(v[i]!=0) total_num_4++;
                     total_val_4+=v[i];
                 }
                 for(var i=17;i<=21;i++){
-                    v[i]=parseInt( $('#D__ID input[name=fosq'+i.toString()+']:checked').val() );
+                    v[i]=parseInt( $('#D__ID input[name=FOSQ_'+i.toString()+']:checked').val() );
                     if(v[i]!=0) total_num_4++;
                     total_val_4+=v[i];
                 }
                 if(total_num_4!=0) mean_4=total_val_4/total_num_4
-                record.FOSQ_Vigilance=mean_4;
+                record.FOSQ_Vigilance=mean_4.toFixed(1);
                 //-------------------------------
                 var total_num_5=0;
                 var total_val_5=0;
                 var mean_5=0;
                 for(var i=27;i<=30;i++){
-                    v[i]=parseInt( $('#D__ID input[name=fosq'+i.toString()+']:checked').val() );
+                    v[i]=parseInt( $('#D__ID input[name=FOSQ_'+i.toString()+']:checked').val() );
                     if(v[i]!=0) total_num_5++;
                     total_val_5+=v[i];
                 }
                 if(total_num_5!=0) mean_5=total_val_5/total_num_5
-                record.FOSQ_Intimacy=mean_5;
+                record.FOSQ_Intimacy=mean_5.toFixed(1);
                 //-------------------------------
                 var total_num=0;
                 if(total_num_1!=0) total_num++;
@@ -684,7 +684,7 @@
                 if(total_num_4!=0) total_num++;
                 if(total_num_5!=0) total_num++;
                 var total_mean=(mean_1+mean_2+mean_3+mean_4+mean_5)/5;
-                record.Productivity=total_mean*total_num
+                record.FOSQ_Productivity=(total_mean*total_num).toFixed(1);
 
                 //return false;
                 return before_submit2(record,dbv);
