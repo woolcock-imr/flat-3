@@ -51,6 +51,52 @@
 			VmInclude:'__COMPONENT__/f/form.01.js'
             VmInclude:'__CURRENT_PATH__/task-form.js'
             //-------------------------------------
+
+
+            //-------------------------------------
+            m.before_submit=function(record,dbv){
+                //----------------
+                //standard
+                if(record.Participant_uid!=""){
+                    dbv.PUID=record.Participant_uid;
+                    dbv.S3=$vm.status_of_data(record);
+                }
+                else{
+                    $vm.alert("No participant ID.");
+                    return false;
+                }
+                //----------------
+
+                var g0  =parseFloat($('input[name=Glucose_0').val());
+                var g10 =parseFloat($('input[name=Glucose_10').val());
+                var g20 =parseFloat($('input[name=Glucose_20').val());
+                var g30 =parseFloat($('input[name=Glucose_30').val());
+                var g60 =parseFloat($('input[name=Glucose_60').val());
+                var g90 =parseFloat($('input[name=Glucose_90').val());
+                var g120=parseFloat($('input[name=Glucose_120').val());
+                var g150=parseFloat($('input[name=Glucose_150').val());
+                var g180=parseFloat($('input[name=Glucose_180').val());
+
+                var v1=(g10+g0)/2*10;
+                var v2=(g20+g10)/2*10;
+                var v3=(g30+g20)/2*10;
+                var v4=(g60+g30)/2*30;
+                var v5=(g90+g60)/2*30;
+                var v6=(g120+g90)/2*30;
+                var v7=(g150+g120)/2*30;
+                var v8=(g180+g150)/2*30;
+
+                var total=v1+v2+v3+v4+v5+v6+v7+v8;
+                record.TAUC=total;
+                
+                //alert(record.TAUC)
+                //return false;
+
+                return true;
+            };
+            //-------------------------------------
+
+
         }
     </script>
     <style>
