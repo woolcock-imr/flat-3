@@ -77,17 +77,28 @@
                 var g150=parseFloat($('input[name=Glucose_150').val());
                 var g180=parseFloat($('input[name=Glucose_180').val());
 
-                var v1=(g10+g0)/2*10;
-                var v2=(g20+g10)/2*10;
-                var v3=(g30+g20)/2*10;
-                var v4=(g60+g30)/2*30;
-                var v5=(g90+g60)/2*30;
-                var v6=(g120+g90)/2*30;
-                var v7=(g150+g120)/2*30;
-                var v8=(g180+g150)/2*30;
+                var g0B  =parseFloat($('input[name=M2_Glucose_0').val());
+                var g10B =parseFloat($('input[name=M2_Glucose_10').val());
+                var g20B =parseFloat($('input[name=M2_Glucose_20').val());
+                var g30B =parseFloat($('input[name=M2_Glucose_30').val());
+                var g60B =parseFloat($('input[name=M2_Glucose_60').val());
+                var g90B =parseFloat($('input[name=M2_Glucose_90').val());
+                var g120B=parseFloat($('input[name=M2_Glucose_120').val());
+                var g150B=parseFloat($('input[name=M2_Glucose_150').val());
+                var g180B=parseFloat($('input[name=M2_Glucose_180').val());
+
+
+                var v1=(g10+g0+g10B+g0B)/4*10;
+                var v2=(g20+g10+g20B+g10B)/4*10;
+                var v3=(g30+g20+g30B+g20B)/4*10;
+                var v4=(g60+g30+g60B+g30B)/4*30;
+                var v5=(g90+g60+g90B+g60B)/4*30;
+                var v6=(g120+g90+g120B+g90B)/4*30;
+                var v7=(g150+g120+g150B+g120B)/4*30;
+                var v8=(g180+g150+g180B+g150B)/4*30;
 
                 var total=v1+v2+v3+v4+v5+v6+v7+v8;
-                record.TAUC=total;
+                record.TAUC=total.toFixed(2);
                 
                 //alert(record.TAUC)
                 //return false;
