@@ -98,7 +98,29 @@
                 var v8=(g180+g150+g180B+g150B)/4*30;
 
                 var total=v1+v2+v3+v4+v5+v6+v7+v8;
-                record.TAUC=total.toFixed(2);
+                record.TAUC_G=total.toFixed(2);
+
+                var g0  =parseFloat($('input[name=Insulin_0').val());
+                var g10 =parseFloat($('input[name=Insulin_10').val());
+                var g20 =parseFloat($('input[name=Insulin_20').val());
+                var g30 =parseFloat($('input[name=Insulin_30').val());
+                var g60 =parseFloat($('input[name=Insulin_60').val());
+                var g90 =parseFloat($('input[name=Insulin_90').val());
+                var g120=parseFloat($('input[name=Insulin_120').val());
+                var g150=parseFloat($('input[name=Insulin_150').val());
+                var g180=parseFloat($('input[name=Insulin_180').val());
+
+                var v1=(g10+g0)/2*10;
+                var v2=(g20+g10)/2*10;
+                var v3=(g30+g20)/2*10;
+                var v4=(g60+g30)/2*30;
+                var v5=(g90+g60)/2*30;
+                var v6=(g120+g90)/2*30;
+                var v7=(g150+g120)/2*30;
+                var v8=(g180+g150)/2*30;
+
+                var total=v1+v2+v3+v4+v5+v6+v7+v8;
+                record.TAUC_I=total.toFixed(2);
                 
                 //alert(record.TAUC)
                 //return false;
