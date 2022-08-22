@@ -43,7 +43,8 @@
             var txt="";
             for(var i=0;i<fs.length;i++){
                 txt+="<div class='row row__ID'><div class='col'>\r\n";
-                txt+="<span>"+fs[i].replace(/_/g," ")+"</span><input type=number step=0.01 class=form-control name="+fs[i]+">\r\n";
+                if(fs[i]=="si") txt+="<span>"+fs[i].replace(/_/g," ")+"</span><input type=number step=0.0000001 class=form-control name="+fs[i]+">\r\n";
+                else  txt+="<span>"+fs[i].replace(/_/g," ")+"</span><input type=number step=0.01 class=form-control name="+fs[i]+">\r\n";
                 txt+="</div></div>\r\n";
             }
             $('#dynamic_part__ID').html(txt);
